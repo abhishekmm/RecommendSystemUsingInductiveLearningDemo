@@ -1,0 +1,30 @@
+<<<<<<< HEAD
+
+python retrain.py --how_many_training_steps=50 --summaries_dir=training_summaries/basic  --output_graph=retrained_graph_abhi.pb --output_labels=retrained_labels1.txt --image_dir=D:\shared\T-Shirt\Image_Classification_with_5_methods-master\src_code_awsTF\method3mod\dataset\dataset\
+
+
+
+
+
+python retrain.py --how_many_training_steps=500 --summaries_dir=training_summaries/basic  --output_graph=C:\Users\abhishe13658\Desktop\clientFinal\TranferLearning\transferlearnmodels\retrained_graph_check_plain_printed.pb --output_labels=retrained_labels1.txt --image_dir=C:\Users\abhishe13658\Desktop\clientFinal\TranferLearning\dataset1\
+
+python retrain.py --how_many_training_steps=500 --summaries_dir=training_summaries/basic  --output_graph=C:\Users\abhishe13658\Desktop\clientFinal\TranferLearning\transferlearnmodels\retrained_graph_half_full.pb --output_labels=retrained_labels2.txt --image_dir=C:\Users\abhishe13658\Desktop\clientFinal\TranferLearning\dataset2\
+
+python retrain.py --how_many_training_steps=500 --summaries_dir=training_summaries/basic  --output_graph=C:\Users\abhishe13658\Desktop\clientFinal\TranferLearning\transferlearnmodels\retrained_graph_collar_round.pb --output_labels=retrained_labels3.txt --image_dir=C:\Users\abhishe13658\Desktop\clientFinal\TranferLearning\dataset3\
+
+=======
+
+python retrain.py --how_many_training_steps=50 --summaries_dir=training_summaries/basic  --output_graph=retrained_graph_abhi.pb --output_labels=retrained_labels1.txt --image_dir=D:\shared\T-Shirt\Image_Classification_with_5_methods-master\src_code_awsTF\method3mod\dataset\dataset\
+
+
+
+
+
+python retrain.py --how_many_training_steps=500 --summaries_dir=training_summaries/basic  --output_graph=C:\Users\abhishe13658\Desktop\clientFinal\TranferLearning\transferlearnmodels\retrained_graph_check_plain_printed.pb --output_labels=retrained_labels1.txt --image_dir=C:\Users\abhishe13658\Desktop\clientFinal\TranferLearning\dataset1\
+
+python retrain.py --how_many_training_steps=500 --summaries_dir=training_summaries/basic  --output_graph=C:\Users\abhishe13658\Desktop\clientFinal\TranferLearning\transferlearnmodels\retrained_graph_half_full.pb --output_labels=retrained_labels2.txt --image_dir=C:\Users\abhishe13658\Desktop\clientFinal\TranferLearning\dataset2\
+
+python retrain.py --how_many_training_steps=500 --summaries_dir=training_summaries/basic  --output_graph=C:\Users\abhishe13658\Desktop\clientFinal\TranferLearning\transferlearnmodels\retrained_graph_collar_round.pb --output_labels=retrained_labels3.txt --image_dir=C:\Users\abhishe13658\Desktop\clientFinal\TranferLearning\dataset3\
+
+>>>>>>> ba84b7d6234a962fe8d0186a07338684f1d6e918
+python retrain.py --how_many_training_steps=500 --summaries_dir=training_summaries/basic  --output_graph=C:\Users\abhishe13658\Desktop\clientFinal\specsavers\TranferLearning\transferlearnmodels\retrained_graph_specs.pb --output_labels=retrained_labels1.txt --image_dir=C:\Users\abhishe13658\Desktop\clientFinal\specsavers\TranferLearning\dataset1

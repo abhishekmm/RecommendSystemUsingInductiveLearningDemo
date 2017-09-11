@@ -1,0 +1,318 @@
+<<<<<<< HEAD
+<html>
+	<head>
+		<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+
+		function readURL(input) {
+		document.getElementById("result").innerHTML = "";
+		document.getElementById("roundframe").style.display='none';
+		document.getElementById("squareframe").style.display='none';
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#uploadPreview')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+		</script>
+		<script>
+	$(document).ready(function () {
+
+		$("#btnSubmit").click(function (event) {
+
+			//stop submit the form, we will post it manually.
+			event.preventDefault();
+
+			// Get form
+			var form = $('#fileUploadForm')[0];
+
+			// Create an FormData object
+			var data = new FormData(form);
+
+			// If you want to add an extra field for the FormData
+			//data.append("CustomField", "This is some extra data, testing");
+
+			// disabled the submit button
+			$("#btnSubmit").prop("disabled", true);
+
+			$.ajax({
+				type: "POST",
+				enctype: 'multipart/form-data',
+				url: "http://localhost:3000/index.html",
+				data: data,
+				processData: false,
+				contentType: false,
+				cache: false,
+				timeout: 600000,
+				success: function (data) {
+
+					//alert(data);
+					//$("#result").innerHTML(data);
+					document.getElementById("result").innerHTML = data;
+					var Row = document.getElementById("row_1");
+					var Cells = Row.getElementsByTagName("td");
+					var recommend=Cells[0].innerText; 
+					//alert(Cells[0].innerText);
+					//alert(recommend.toLowerCase() === "roundframe".toLowerCase());
+					
+					if((recommend.toLowerCase())=== ("roundframe".toLowerCase()))  {
+						document.getElementById("roundframe").style.display='block';
+						document.getElementById("squareframe").style.display='none';
+						}
+						
+					if(recommend.toLowerCase()==="squareframe".toLowerCase()) {
+						document.getElementById("roundframe").style.display='none';
+						document.getElementById("squareframe").style.display='block';
+
+					}
+					//alert(data);
+					//alert(data);
+					//console.log("SUCCESS : ", data);
+					$("#btnSubmit").prop("disabled", false);
+					
+
+				},
+				error: function (e) {
+
+					$("#result").text(e.responseText);
+					console.log("ERROR : ", e);
+					$("#btnSubmit").prop("disabled", false);
+
+				}
+			});
+
+		});
+
+	});
+	 window.onload = function(){
+						document.getElementById("roundframe").style.display='none';
+						document.getElementById("squareframe").style.display='none';
+	}
+	</script>
+	</head>
+	
+	<body   >
+		 <p align="center"></p>
+    <h1 style="text-align: center;"> Optical  Demo Recommender System <br>
+      Using Deep Learning Tensorflow</h1>
+		<table align='center'>
+		<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+		<tr><p><td>
+			Category* [Expected label by user] : 
+			<br>
+				Note: This is expected label for uploaded image.<br> If this label does not exist, it will be created for future<br> training purpose.
+			
+			</td> <td> <input type="text" name="category" />
+				 
+				</td></p></tr>
+			<tr><p><td>
+			
+				<img id="uploadPreview" name="uploadPreview" width="20%" height="20%"/>
+			<br>
+				Select a file: <input type="file" name="upload"  onchange="readURL(this);"/>
+			</td></p></tr>
+			<tr><p><td>
+			<br>
+			<input type="submit" value="Show Personalized Recommendation" id="btnSubmit" /></td></p></tr>
+			<br>
+		</form>
+		</table>
+		<div id='result' align='center' width="20%" height="20%"></div>
+		<div id='roundframe' style="display: none;">
+			<table align='center'>
+				<tr><th align='center'> <b> Our Recommendations for You!</b></th></tr>
+				<tr>
+					<td> <img src="/recommend/RoundFrame/re1.jpg"> </td>
+					<td> <img src="/recommend/RoundFrame/re2.jpg"> </td>
+					<td> <img src="/recommend/RoundFrame/re3.jpg"> </td>
+					<td> <img src="/recommend/RoundFrame/re4.jpg"> </td>
+					<td> <img src="/recommend/RoundFrame/re5.jpg"> </td>
+					<td> <img src="/recommend/RoundFrame/re6.jpg"> </td>
+				</tr>
+			</table>
+		</div>
+
+		<div id='squareframe' style="display: none;">
+		<table align='center'>
+				<tr><th> <b>We Recommendation You following	</b>			</th></tr>
+				<tr>
+					
+					<td> <img src="/recommend/SquareFrame/re1.jpg"> </td>
+					<td> <img src="/recommend/SquareFrame/re2.jpg"> </td>
+					<td> <img src="/recommend/SquareFrame/re3.jpg"> </td>
+					<td> <img src="/recommend/SquareFrame/re4.jpg"> </td>
+					<td> <img src="/recommend/SquareFrame/re5.jpg"> </td>
+					<td> <img src="/recommend/SquareFrame/re6.jpg"> </td>
+				</tr>
+			</table>
+		
+		</div>
+	</body>
+=======
+<html>
+	<head>
+		<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+
+		function readURL(input) {
+		document.getElementById("result").innerHTML = "";
+		document.getElementById("roundframe").style.display='none';
+		document.getElementById("squareframe").style.display='none';
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#uploadPreview')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+		</script>
+		<script>
+	$(document).ready(function () {
+
+		$("#btnSubmit").click(function (event) {
+
+			//stop submit the form, we will post it manually.
+			event.preventDefault();
+
+			// Get form
+			var form = $('#fileUploadForm')[0];
+
+			// Create an FormData object
+			var data = new FormData(form);
+
+			// If you want to add an extra field for the FormData
+			//data.append("CustomField", "This is some extra data, testing");
+
+			// disabled the submit button
+			$("#btnSubmit").prop("disabled", true);
+
+			$.ajax({
+				type: "POST",
+				enctype: 'multipart/form-data',
+				url: "http://localhost:3000/index.html",
+				data: data,
+				processData: false,
+				contentType: false,
+				cache: false,
+				timeout: 600000,
+				success: function (data) {
+
+					//alert(data);
+					//$("#result").innerHTML(data);
+					document.getElementById("result").innerHTML = data;
+					var Row = document.getElementById("row_1");
+					var Cells = Row.getElementsByTagName("td");
+					var recommend=Cells[0].innerText; 
+					//alert(Cells[0].innerText);
+					//alert(recommend.toLowerCase() === "roundframe".toLowerCase());
+					
+					if((recommend.toLowerCase())=== ("roundframe".toLowerCase()))  {
+						document.getElementById("roundframe").style.display='block';
+						document.getElementById("squareframe").style.display='none';
+						}
+						
+					if(recommend.toLowerCase()==="squareframe".toLowerCase()) {
+						document.getElementById("roundframe").style.display='none';
+						document.getElementById("squareframe").style.display='block';
+
+					}
+					//alert(data);
+					//alert(data);
+					//console.log("SUCCESS : ", data);
+					$("#btnSubmit").prop("disabled", false);
+					
+
+				},
+				error: function (e) {
+
+					$("#result").text(e.responseText);
+					console.log("ERROR : ", e);
+					$("#btnSubmit").prop("disabled", false);
+
+				}
+			});
+
+		});
+
+	});
+	 window.onload = function(){
+						document.getElementById("roundframe").style.display='none';
+						document.getElementById("squareframe").style.display='none';
+	}
+	</script>
+	</head>
+	
+	<body   >
+		 <p align="center"></p>
+    <h1 style="text-align: center;"> Optical  Demo Recommender System <br>
+      Using Deep Learning Tensorflow</h1>
+		<table align='center'>
+		<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+		<tr><p><td>
+			Category* [Expected label by user] : 
+			<br>
+				Note: This is expected label for uploaded image.<br> If this label does not exist, it will be created for future<br> training purpose.
+			
+			</td> <td> <input type="text" name="category" />
+				 
+				</td></p></tr>
+			<tr><p><td>
+			
+				<img id="uploadPreview" name="uploadPreview" width="20%" height="20%"/>
+			<br>
+				Select a file: <input type="file" name="upload"  onchange="readURL(this);"/>
+			</td></p></tr>
+			<tr><p><td>
+			<br>
+			<input type="submit" value="Show Personalized Recommendation" id="btnSubmit" /></td></p></tr>
+			<br>
+		</form>
+		</table>
+		<div id='result' align='center' width="20%" height="20%"></div>
+		<div id='roundframe' style="display: none;">
+			<table align='center'>
+				<tr><th align='center'> <b> Our Recommendations for You!</b></th></tr>
+				<tr>
+					<td> <img src="/recommend/RoundFrame/re1.jpg"> </td>
+					<td> <img src="/recommend/RoundFrame/re2.jpg"> </td>
+					<td> <img src="/recommend/RoundFrame/re3.jpg"> </td>
+					<td> <img src="/recommend/RoundFrame/re4.jpg"> </td>
+					<td> <img src="/recommend/RoundFrame/re5.jpg"> </td>
+					<td> <img src="/recommend/RoundFrame/re6.jpg"> </td>
+				</tr>
+			</table>
+		</div>
+
+		<div id='squareframe' style="display: none;">
+		<table align='center'>
+				<tr><th> <b>We Recommendation You following	</b>			</th></tr>
+				<tr>
+					
+					<td> <img src="/recommend/SquareFrame/re1.jpg"> </td>
+					<td> <img src="/recommend/SquareFrame/re2.jpg"> </td>
+					<td> <img src="/recommend/SquareFrame/re3.jpg"> </td>
+					<td> <img src="/recommend/SquareFrame/re4.jpg"> </td>
+					<td> <img src="/recommend/SquareFrame/re5.jpg"> </td>
+					<td> <img src="/recommend/SquareFrame/re6.jpg"> </td>
+				</tr>
+			</table>
+		
+		</div>
+	</body>
+>>>>>>> ba84b7d6234a962fe8d0186a07338684f1d6e918
+</html>
